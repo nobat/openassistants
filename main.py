@@ -3,10 +3,25 @@ import os
 from openai import OpenAI
 import streamlit as st
 import time
+from streamlit_extras.buy_me_a_coffee import button as buy_me_a_coffee_button
 
-load_dotenv()
-API_KEY = os.environ["OPENAI_API_KEY"]
-client = OpenAI(api_key=API_KEY)
+if os.getenv("ENV_NAME") == "local":
+    from dotenv import find_dotenv, load_dotenv, dotenv_values
+
+    dotenv_path = find_dotenv()
+    load_dotenv(dotenv_path)
+    env_vars = dotenv_values(dotenv_path)
+
+buy_me_a_coffee_button(username="stonebat", floating=True, width=221)
+
+# OpenAI Key 입력 받기
+openai_api_key = st.text_input("OPEN_AI_API_KEY", type="password")
+
+# Check if openai_api_key is empty and get it from the environment variable if necessary
+if not openai_api_key:
+    openai_api_key = os.getenv("OPEN_AI_API_KEY")
+
+client = OpenAI(api_key=openai_api_key)
 
 # Initialize session state for file_id and assistant_id
 if "file_id" not in st.session_state:
