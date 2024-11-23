@@ -3,3 +3,7 @@ name = "openassistants"
 version = "0.1.0"
 description = "Open Assistants"
 dependencies = ["openai", "streamlit-extras"]
+
+
+# poetry export -f requirements.txt --output requirements.txt
+# rsconnect write-manifest streamlit .
