@@ -1,8 +1,10 @@
+openai
 langchain
 langchain-openai
-openai
-pypdf
+langchain-community
+langchain-chroma
 chromadb
+pypdf
 tiktoken
 pysqlite3
 streamlit-extras

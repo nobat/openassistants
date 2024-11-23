@@ -1,0 +1,80 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules/
+
+# transpiled js from packages/*
+lib/
+!infrastructure/cdk/lib/
+lib-esm/
+build/
+
+# tmp*/
+.venv/*
+!.venv/*.md
+data/*.csv
+bazel-*
+*.zip
+.bazelrc
+
+# certs
+*.pem
+*.der
+*.crt
+
+# Python / Pytest
+.pytest_cache
+__pycache__
+*.egg-info
+
+# misc
+.DS_Store
+**/.eslintcache
+yarn-error.log
+.vscode/settings.json
+.env
+*-arns.json
+infrastructure/cdk/cdk.out
+*.bak
+
+package-lock.json
+lerna-debug.log
+
+**/dist/
+
+*.tsbuildinfo
+.parcel-cache/
+cdk-template/
+
+amazonwebservices.aws-toolkit-vscode
+
+arns-cd-local.json
+
+main.css
+
+coverage/
+target/
+
+# self signed certs
+.certs
+
+# Python
+*.egg-info
+__pycache__/
+*.pyc
+
+# Jetbrains IDE
+.idea/
+
+# exec logs
+timeit
+
+.cache/
+
+# developer specific local config files
+local_arg_*.yaml
+
+.env
+chroma_db
+chroma_db/
+.streamlit/secrets.toml
